@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# 工作区临时文件（防止误推）
+.workbuddy/
+*.tmp
+*.bak
+*.log
+
+# 客户脚本 dump（红线：绝对不推）
+dumps/
+inputs/
+outputs/
+test-output/
+*客户*.html
+*客户*.md
+*甲方*.html
+*甲方*.md
+*script*.xlsx
+*script*.docx
+
+# 学习阶段的临时产物
+learning/
+workbuddy_memory/
