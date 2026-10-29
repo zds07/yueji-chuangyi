@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>短视频创意预览稿 · 模板</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #faf8f3;
+    color: #1a1a1a;
+    line-height: 1.7;
+    padding: 0;
+  }
+  .container { max-width: 880px; margin: 0 auto; padding: 40px 24px; }
+
+  .hero {
+    background: linear-gradient(135deg, #2d5016 0%, #1a3009 100%);
+    color: #f5f5dc;
+    padding: 60px 40px;
+    border-radius: 16px;
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #f5f5dc;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+  .hero h1 { font-size: 36px; margin-bottom: 12px; font-weight: 700; }
+  .hero-sub { font-size: 18px; opacity: 0.85; margin-bottom: 20px; }
+  .hero-meta { display: flex; gap: 24px; flex-wrap: wrap; font-size: 13px; opacity: 0.7; }
+
+  .module {
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  }
+  .module-header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .module-num {
+    width: 32px; height: 32px;
+    background: #2d5016;
+    color: #fff;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 14px;
+    flex-shrink: 0;
+  }
+  .module-title { font-size: 22px; font-weight: 700; }
+  .module-sub { font-size: 12px; color: #999; letter-spacing: 1px; margin-left: auto; }
+
+  .one-liner {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a1a;
+    padding: 24px;
+    background: #f5f5dc;
+    border-radius: 12px;
+    border-left: 4px solid #2d5016;
+  }
+  .one-liner-sub { margin-top: 16px; font-size: 15px; color: #555; }
+
+  .form-table { width: 100%; border-collapse: collapse; }
+  .form-table td { padding: 14px 16px; border-bottom: 1px solid #f0f0f0; font-size: 15px; }
+  .form-table td:first-child { width: 110px; color: #666; font-weight: 500; background: #fafafa; }
+  .form-table tr:last-child td { border-bottom: none; }
+
+  .role-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .role-card {
+    background: #fafafa;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #f0f0f0;
+  }
+  .role-name { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+  .role-id { font-size: 13px; color: #2d5016; margin-bottom: 12px; }
+  .role-style { font-size: 14px; color: #444; line-height: 1.8; }
+
+  .ref-video {
+    display: flex; gap: 16px;
+    padding: 20px;
+    background: #fafafa;
+    border-radius: 12px;
+    margin-bottom: 16px;
+  }
+  .ref-thumb {
+    width: 60px; height: 60px;
+    background: #f5f5dc;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px;
+    flex-shrink: 0;
+  }
+  .ref-title { font-weight: 700; margin-bottom: 6px; }
+  .ref-desc { font-size: 14px; color: #555; line-height: 1.7; }
+
+  .flow { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .flow-step {
+    background: #e8f5e9;
+    color: #2d5016;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .flow-arrow { color: #999; font-size: 18px; }
+
+  .shot-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .shot-table th {
+    background: #2d5016;
+    color: #fff;
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+  }
+  .shot-table td { padding: 12px; border-bottom: 1px solid #f0f0f0; vertical-align: top; }
+  .shot-table tr:nth-child(even) td { background: #fafafa; }
+  .shot-table .num { width: 40px; font-weight: 700; color: #2d5016; }
+  .shot-table .scene { width: 110px; font-weight: 500; }
+  .shot-table .placeholder {
+    display: inline-block;
+    background: #fff3e0;
+    color: #e65100;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    border: 1px dashed #ff9800;
+  }
+
+  .checklist { display: flex; flex-direction: column; gap: 12px; }
+  .check-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 16px;
+    background: #fafafa;
+    border-radius: 10px;
+    border: 1px solid #f0f0f0;
+  }
+  .check-box {
+    width: 20px; height: 20px;
+    border: 2px solid #2d5016;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+  .check-text { flex: 1; font-size: 15px; }
+  .check-tag {
+    font-size: 12px;
+    color: #2d5016;
+    background: #e8f5e9;
+    padding: 4px 10px;
+    border-radius: 12px;
+    flex-shrink: 0;
+  }
+
+  .benefit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .benefit-card {
+    background: #fafafa;
+    border: 1px dashed #ccc;
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .benefit-card h4 { font-size: 15px; margin-bottom: 8px; color: #333; }
+  .benefit-card p { font-size: 13px; color: #888; }
+
+  @media (max-width: 640px) {
+    .container { padding: 20px 16px; }
+    .hero { padding: 40px 24px; }
+    .hero h1 { font-size: 26px; }
+    .role-grid, .benefit-grid { grid-template-columns: 1fr; }
+    .module { padding: 24px; }
+    .shot-table { font-size: 12px; }
+    .shot-table td, .shot-table th { padding: 8px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ===== 模块 1：项目卡片 ===== -->
+  <div class="hero">
+    <div class="hero-tag">[系列名·待客户提供] · [本期副标题·待客户提供]</div>
+    <h1>[项目主标题·待客户提供]</h1>
+    <div class="hero-sub">[一句话副标题·待客户提供]</div>
+    <div class="hero-meta">
+      <span>🎬 [N] 镜</span>
+      <span>🕐 [时长] 分钟</span>
+      <span>📱 9:16 竖屏</span>
+      <span>🎯 [平台·待客户提供]</span>
+      <span>👥 [N] 位主角</span>
+    </div>
+  </div>
+
+  <!-- ===== 模块 2：创意一句话 ===== -->
+  <div class="module">
+    <div class="module-header">
+      <div class="module-num">2</div>
+      <div class="module-title">创意一句话</div>
+      <div class="module-sub">THE ONE-LINER</div>
+    </div>
+    <div class="one-liner">[核心公式·待客户提供]<br>——[钩子句·待客户提供]。</div>
+    <div class="one-liner-sub">
+      核心钩子：<strong>[一句话定位·待客户提供]</strong>
+    </div>
+  </div>
+
+  <!-- ===== 模块 3：形式说明 ===== -->
+  <div class="module">
+    <div class="module-header">
+      <div class="module-num">3</div>
+      <div class="module-title">形式说明</div>
+      <div class="module-sub">FORM & STYLE</div>
+    </div>
+    <table class="form-table">
+      <tr><td>类型</td><td>[剧情向 / Vlog / 蒙太奇双线 / 访谈 / 微电影]</td></tr>
+      <tr><td>节奏</td><td>[快切/中速/慢节奏 + 时长区间]</td></tr>
+      <tr><td>调性</td><td>[反差萌 / 温情 / 燃 / 治愈 / 黑色幽默]</td></tr>
+      <tr><td>平台</td><td>[抖音 / 小红书 / 视频号 / B 站]</td></tr>
+      <tr><td>比例</td><td>[9:16 竖屏 / 16:9 横屏]</td></tr>
+      <tr><td>总时长</td><td>[时长] 分钟（[N] 镜）</td></tr>
+    </table>
+  </div>
+
+  <!-- ===== 模块 4：角色设定 ===== -->
+  <div class="module">
+    <div class="module-header">
+      <div class="module-num">4</div>
+      <div class="module-title">角色设定</div>
+      <div class="module-sub">CAST</div>
+    </div>
+    <div class="role-grid">
+      <div class="role-card">
+        <div class="role-name">[主角 A·待客户提供]</div>
+        <div class="role-id">[身份定位·待客户提供]</div>
+        <div class="role-style">
+          <strong>风格</strong>：[对白风格·待客户提供]<br>
+          <strong>出镜</strong>：[出镜场景·待客户提供]<br>
+          <strong>钩子台词</strong>："[标志性金句·待客户提供]"
+        </div>
+      </div>
+      <div class="role-card">
+        <div class="role-name">[主角 B·待客户提供]</div>
+        <div class="role-id">[身份定位·待客户提供]</div>
+        <div class="role-style">
+          <strong>风格</strong>：[对白风格·待客户提供]<br>
+          <strong>出镜</strong>：[出镜场景·待客户提供]<br>
+          <strong>钩子台词</strong>："[标志性金句·待客户提供]"
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 模块 5：参考视频（条件模块） ===== -->
+  <!-- 用户给了参考视频才写这段；没给就删除整个 module -->
+  <div class="module">
+    <div class="module-header">
+      <div class="module-num">5</div>
+      <div class="module-title">参考视频</div>
+      <div class="module-sub">REFERENCE</div>
+    </div>
+    <div class="ref-video">
+      <div class="ref-thumb">🎬</div>
+      <div class="ref-info">
+        <div class="ref-title">[参考片源 1·待用户提供]</div>
+        <div class="ref-desc">
+          [一句话定位它"好在哪"·待用户提供]
+        </div>
+      </div>
+    </div>
+    <div class="ref-video">
+      <div class="ref-thumb">📋</div>
+      <div class="ref-info">
+        <div class="ref-title">[参考片源 2·待用户提供]</div>
+        <div class="ref-desc">
+          [本地路径或链接 + 镜数/时长]
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 模块 6：叙事流程图 ===== -->
+  <div class="module">
+    <div class="module-header">
+      <div class="module-num">6</div>
+      <div class="module-title">叙事流程图</div>
+      <div class="module-sub">STORY FLOW</div>
+    </div>
+    <div class="flow">
+      <div class="flow-step">[开场]<br><small>[主线]</small></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">[引出]<br><small>[主线]</small></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">[外景 1]<br><small>[场景]</small></div>
+      <div class="flow-arrow">↩</div>
+      <div class="flow-step">[对账 1]<br><small>[主线]</small></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">[外景 2]<br><small>[场景]</small></div>
+      <div class="flow-arrow">↩</div>
+      <div class="flow-step">[对账 2]<br><small>[主线]</small></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">[外景 3]<br><small>[场景]</small></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">[收尾 CTA]<br><small>[主线]</small></div>
+    </div>
+  </div>
+
+  <!-- ===== 模块 7：分镜简版 ===== -->
+  <div class="module">
+    <div class="module-header">
+      <div class="module-num">7</div>
+      <div class="module-title">分镜简版</div>
+      <div class="module-sub">[N] SHOTS</div>
+    </div>
+    <table class="shot-table">
+      <tr>
+        <th class="num">镜</th>
+        <th class="scene">场景</th>
+        <th>画面 + 台词/字幕</th>
+      </tr>
+      <tr>
+        <td class="num">1</td>
+        <td class="scene">[场景 1]</td>
+        <td>[画面内容 + 关键台词·待客户提供]</td>
+      </tr>
+      <tr>
+        <td class="num">2</td>
+        <td class="scene">[场景 2]</td>
+        <td>[画面内容 + 关键台词·待客户提供]</td>
+      </tr>
+      <tr>
+        <td class="num">3</td>
+        <td class="scene">[场景 3]</td>
+        <td>[画面内容 + 关键台词·待客户提供] <span class="placeholder">权益·待客户提供</span></td>
+      </tr>
+      <tr>
+        <td class="num">4</td>
+        <td class="scene">[场景 4]</td>
+        <td>[画面内容 + 关键台词·待客户提供]</td>
+      </tr>
+      <tr>
+        <td class="num">5</td>
+        <td class="scene">[场景 5]</td>
+        <td>[画面内容 + 关键台词·待客户提供] <span class="placeholder">权益·待客户提供</span></td>
+      </tr>
+      <tr>
+        <td class="num">N</td>
+        <td class="scene">[场景 N]</td>
+        <td>[画面内容 + 关键台词·待客户提供] <span class="placeholder">CTA·待客户提供</span></td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ===== 模块 8：权益占位图（条件模块） ===== -->
+  <!-- 用户给了权益才写这段；没给就删除整个 module -->
+  <div class="module">
+    <div class="module-header">
+      <div class="module-num">8</div>
+      <div class="module-title">权益占位清单</div>
+      <div class="module-sub">BENEFITS TO FILL</div>
+    </div>
+    <div class="benefit-grid">
+      <div class="benefit-card">
+        <h4>[权益点 1·待客户提供]</h4>
+        <p>[出现位置 / 形式 / 时长·待客户提供]</p>
+      </div>
+      <div class="benefit-card">
+        <h4>[权益点 2·待客户提供]</h4>
+        <p>[出现位置 / 形式 / 时长·待客户提供]</p>
+      </div>
+      <div class="benefit-card">
+        <h4>[权益点 3·待客户提供]</h4>
+        <p>[出现位置 / 形式 / 时长·待客户提供]</p>
+      </div>
+      <div class="benefit-card">
+        <h4>[权益点 4·待客户提供]</h4>
+        <p>[出现位置 / 形式 / 时长·待客户提供]</p>
+      </div>
+      <div class="benefit-card" style="grid-column: 1 / -1;">
+        <h4>[结尾 CTA·待客户提供]</h4>
+        <p>[口播 + 花字 + App 引导语]</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 模块 9：待确认项 ===== -->
+  <div class="module">
+    <div class="module-header">
+      <div class="module-num">9</div>
+      <div class="module-title">待确认项</div>
+      <div class="module-sub">CHECKLIST</div>
+    </div>
+    <div class="checklist">
+      <div class="check-item">
+        <span class="check-box"></span>
+        <span class="check-text">[权益点 × N·待客户提供]</span>
+        <span class="check-tag">客户提供</span>
+      </div>
+      <div class="check-item">
+        <span class="check-box"></span>
+        <span class="check-text">[CTA 收尾·待客户提供]</span>
+        <span class="check-tag">客户提供</span>
+      </div>
+      <div class="check-item">
+        <span class="check-box"></span>
+        <span class="check-text">[叙事风格·待确认]</span>
+        <span class="check-tag">创作确认</span>
+      </div>
+      <div class="check-item">
+        <span class="check-box"></span>
+        <span class="check-text">[是否需要制作版 xlsx·待确认]</span>
+        <span class="check-tag">交付确认</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
